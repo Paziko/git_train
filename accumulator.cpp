@@ -19,7 +19,8 @@ int main(int args, char* argv[]) {
     	while (i < args && !(tmp = stoi(argv[i]))) {
         	++i;
     	}
-	
+		
+		++i;
     	result += tmp;
     }
 
