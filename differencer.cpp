@@ -12,18 +12,16 @@ int main(int args, char* argv[]) {
     int result = 0;
     int tmp;
     int i = 1;
-	
-    for (int k = 0; k < 2; ++k) {
-	tmp = 0;
 
-    	while (i < args && !(tmp = stoi(argv[i]))) {
-        	++i;
-    	}
-	
-    	result += tmp;
+    while (i < args && !(result = stoi(argv[i]))) {
+       	++i;
     }
 
-    cout << "Result = " << result << endl;
+    while (i < args && !(tmp = stoi(argv[i]))) {
+        ++i;
+    }
+
+    cout << "Result =" << result - tmp << endl;    
 
     return 0;
 }
