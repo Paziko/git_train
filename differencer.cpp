@@ -10,21 +10,20 @@ int main(int args, char* argv[]) {
     }
 
     int result = 0;
-    int tmp;
+	int tmp = 0;
     int i = 1;
-	
-    for (int k = 0; k < 2; ++k) {
-	tmp = 0;
 
-    	while (i < args && !(tmp = stoi(argv[i]))) {
-        	++i;
-    	}
-		
-		++i;
-    	result += tmp;
+    while (i < args && !(result = stoi(argv[i]))) {
+       	++i;
+    }
+	
+	++i;
+
+    while (i < args && !(tmp = stoi(argv[i]))) {
+        ++i;
     }
 
-    cout << "Result = " << result << endl;
+    cout << "Result = " << result - tmp << endl;    
 
     return 0;
 }
